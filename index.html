@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>穿越迷宫</title>
+<style type="text/css"> 
+body{	
+	background:url(images/bg.jpg) no-repeat;
+	background-color:#A4E0E8;	
+}
+.wrapper{
+	padding:10px; margin:0 auto; width:690px; margin-top:20px; background-color:#FFF; font-size:12px;
+	border:solid 1px #CCC; border-radius:3px; box-shadow:0 1px 1px #FFFFFF inset, 0 1px 2px #B2B2B2; 
+}
+.container{
+	margin:0 auto; width:672px; margin-top:20px;  
+}
+.eq{
+	height:32px; line-height:32px; margin-top:10px; vertical-align:middle; text-align:center;
+}
+.equipIcon{
+	 display:inline-block; width:32px; height:32px; 
+}
+.bomb{
+	background:url(images/sprite_bomb.png) no-repeat 0 2px; 
+}
+.star{
+	background:url(images/tile.png) no-repeat 0 -64px; 
+}
+.equipNumber{display:inline-block; }
+
+.tips{ height:480px; width:672px; margin-top:-480px; line-height:480px; vertical-align:middle; color:#F90; font-weight:bold; text-align:center; display:none;}
+.tipsContent{ background-color:#FFF; height:20px; white-space:100px; display:inline-block;}
+
+#gameCanvas{ 
+	background:url(images/bg_main.png); display:block;
+}
+
+</style>
+</head>
+
+<body>
+<!--
+ height : rows * 3 * 32 [4-384]
+ width : columns * 3 * 32 [6-576]
+-->
+<!--<audio src="images/music.mp3" autoplay="true" loop="loop"></audio>-->
+<div class="wrapper">
+<div class="container">
+	<canvas id="gameCanvas" width="672" height="480"></canvas><div id="tips" class="tips">恭喜过关!!</div>
+</div>
+<div class="eq">第<span id="pass_number"></span>关 &nbsp;&nbsp;
+	<div class="equipIcon bomb"></div>×<div class="equipNumber" id="bomb_number">0</div>&nbsp;&nbsp;
+	剩余时间时间:<div class="equipNumber" id="game_time">60</div>
+	<div class="equipNumber" style="display:none" ><a href="#" id="nextGame">next</a></div>
+</div>
+<div class="eq">
+	说明：找出迷宫路径中的障碍物，然后炸毁才能通过迷宫。星星可以增加炸弹，心型可以增加时间
+</div>
+</div>
+<script src="js/maze.js"></script>
+
+</body>
+</html>
